@@ -7,13 +7,10 @@ dd: 6/8/2018 19:00pm -> 22:00pm Angualr Spike (AD and security),
 
 
 ###Considerations###
+
 Logging - HttpInterceptor -> Implicit logging of requests. * ErrorInterceptor *
 
 Angualr Security: 
-  * 
-  * 
-  * 
-  * 
   * RBAC (???) 
   * Claims and Roles in token 
   * AuthGuard
