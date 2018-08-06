@@ -6,7 +6,7 @@ Temp area without IP
 dd: 6/8/2018 19:00pm -> 22:00pm Angualr Spike (AD and security),
 
 
-###Considerations###
+## Considerations ##
 
 Logging - HttpInterceptor -> Implicit logging of requests. * ErrorInterceptor *
 
