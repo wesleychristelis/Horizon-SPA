@@ -1,24 +1,24 @@
 Logging - HttpInterceptor -> Implicit logging of requests.
-		- ErrorInterceptor
-		- 
+		* ErrorInterceptor
+		* 
 
 Angualr Security:
-	-
-	-
-	-
-	-
-	- RBAC (???)
-	- Claims and Roles in token 
-	- AuthGuard 
+	*
+	*
+	*
+	*
+	* RBAC (???)
+	* Claims and Roles in token 
+	* AuthGuard 
 
 Angualr State Management
 
 Angualr AD Credentials
-	- Tokens
-	-
+	* Tokens
+		* Clarify claims	
 
 Dates Formats:
-	- Standards ???
+	* Standards ???
 
 GrapQL Considerations as a single point API Gateway for all microservices. ???
 
