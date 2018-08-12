@@ -1,72 +1,76 @@
 import { Injectable } from '@angular/core';
 
+import { LogPublisher } from "./log-publishers";
+import { LogPublishersService } from "./log-publishers.service";
+
 export enum LogLevel {
-    All = 0,
-    Debug = 1,
-    Info = 2,
-    Warn = 3,
-    Error = 4,
-    Fatal = 5,
-    Off = 6
+  All = 0,
+  Debug = 1,
+  Info = 2,
+  Warn = 3,
+  Error = 4,
+  Fatal = 5,
+  Off = 6
 }
 
 @Injectable()
 export class LogService {
-    level: LogLevel = LogLevel.All;
-    logWithDate: boolean = true;
+  level: LogLevel = LogLevel.All;
+  logWithDate: boolean = true;
+  publishers: LogPublisher[] = [];
 
-    private shouldLog(level: LogLevel): boolean {
-        let ret: boolean = false;
-        if ((level >= this.level &&
-             level !== LogLevel.Off) ||
-             this.level === LogLevel.All) {
-          ret = true;
-        }
-        return ret;
-      }
+  constructor(private logPublishersService: LogPublishersService){
+    this.publishers = logPublishersService.publishers;
+  }
 
-    debug(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.Debug,
-                        optionalParams);
-      }
-            
-      info(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.Info,
-                        optionalParams);
-      }
-            
-      warn(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.Warn,
-                        optionalParams);
-      }
-            
-      error(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.Error,
-                        optionalParams);
-      }
-            
-      fatal(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.Fatal,
-                        optionalParams);
-      }
-            
-      log(msg: string, ...optionalParams: any[]) {
-        this.writeToLog(msg, LogLevel.All,
-                        optionalParams);
-      }
-
-      private writeToLog(msg: string,
-        level: LogLevel,
-        params: any[]) {
-        if (this.shouldLog(level)) {
-          let entry: LogEntry = new LogEntry();
-          entry.message = msg;
-          entry.level = level;
-          entry.extraInfo = params;
-          entry.logWithDate = this.logWithDate;
-          console.log(entry.buildLogString());
-        }
+  private shouldLog(level: LogLevel): boolean {
+    let ret: boolean = false;
+    if ((level >= this.level && level !== LogLevel.Off) || this.level === LogLevel.All) {
+      ret = true;
     }
+    
+    return ret;
+  }
+
+  debug(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.Debug, optionalParams);
+  }
+          
+  info(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.Info, optionalParams);
+  }
+          
+  warn(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.Warn, optionalParams);
+  }
+          
+  error(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.Error, optionalParams);
+  }
+          
+  fatal(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.Fatal, optionalParams);
+  }
+          
+  log(msg: string, optionalParams: any[]) {
+    this.writeToLog(msg, LogLevel.All, optionalParams);
+  }
+
+  private writeToLog(msg: string,
+    level: LogLevel,
+    params: any[]) {
+    if (this.shouldLog(level)) {
+      let entry: LogEntry = new LogEntry();
+      entry.message = msg;
+      entry.level = level;
+      entry.extraInfo = params;
+      entry.logWithDate = this.logWithDate;
+      
+      for (let logger of this.publishers) {
+        logger.log(entry).subscribe(response => console.log(response));
+      }
+    }
+  }
 }
 
 export class LogEntry {
@@ -86,8 +90,7 @@ export class LogEntry {
     ret += "Type: " + LogLevel[this.level];
     ret += " - Message: " + this.message;
     if (this.extraInfo.length) {
-      ret += " - Extra Info: "
-        + this.formatParams(this.extraInfo);
+      ret += " - Extra Info: " + this.formatParams(this.extraInfo);
     }
       
     return ret;
@@ -104,7 +107,7 @@ export class LogEntry {
         ret += JSON.stringify(item) + ",";
       }
     }
-      
+
     return ret;
   }
 }

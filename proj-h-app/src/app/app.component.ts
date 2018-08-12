@@ -9,7 +9,6 @@ import { LogService }  from './app-logger/log.service';
 export class AppComponent {
   title = 'proj-h-app';
   constructor(private logService: LogService){ 
-    logService.log("App component logger");
+    logService.log("App component logger", []);
   }
-  
 }

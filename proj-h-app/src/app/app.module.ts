@@ -3,6 +3,7 @@ import { NgModule, ErrorHandler, Injectable} from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { LogService } from './app-logger/log.service';
 import { LogTestComponent } from './app-logger/log-test.component';
+import { LogPublishersService } from "./app-logger/log-publishers.service";
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     HttpModule
   ],
   providers: [
-    LogService
+    LogService,
+    LogPublishersService
   ],
   bootstrap: [
     AppComponent
