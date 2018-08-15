@@ -70,7 +70,7 @@ export class LogWebApi extends LogPublisher {
     // Must call super() from derived classes
     super();
     // Set location
-    this.location = "http://localhost:3000/";
+    this.location = "http://localhost:3000/logtest";
   }
       
   // Add log entry to back end data store
@@ -93,7 +93,6 @@ export class LogWebApi extends LogPublisher {
   private handleErrors(error: any): Observable<any> {
     let errors: string[] = [];
     let msg: string = "";
-      
     msg = "Status: " + error.status;
     msg += " - Status Text: " + error.statusText;
     if (error.json()) {

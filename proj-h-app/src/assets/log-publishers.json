@@ -11,7 +11,7 @@
     },
     {
       "loggerName": "webapi",
-      "loggerLocation": "/api/log",
+      "loggerLocation": "http://localhost:3000/logtest",
       "isActive": true
     }
   ]
