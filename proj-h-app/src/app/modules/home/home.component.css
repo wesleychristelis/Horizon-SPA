@@ -1,0 +1,13 @@
+.home-banner {	
+    height: 81px;
+    width: 1920px;
+    background: linear-gradient(270deg, rgba(0,126,166,0) 0%, #00486D 100%);
+}
+
+.home-footer {
+    height: 100px;
+    width: 1920px;
+    background-color: #383633;
+    box-shadow: 0 -1px 4px 0 rgba(0,0,0,0.15);
+}
+

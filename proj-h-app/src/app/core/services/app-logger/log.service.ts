@@ -56,9 +56,7 @@ export class LogService {
     this.writeToLog(msg, LogLevel.All, optionalParams);
   }
 
-  private writeToLog(msg: string,
-    level: LogLevel,
-    params: any[]) {
+  private writeToLog(msg: string, level: LogLevel, params: any[]) {
     if (this.shouldLog(level)) {
       let entry: LogEntry = new LogEntry();
       entry.message = msg;

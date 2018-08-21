@@ -89,7 +89,7 @@ export class LogWebApi extends LogPublisher {
     // TODO: Call Web API to clear all values
     return Observable.of(true);
   }
-      
+  
   private handleErrors(error: any): Observable<any> {
     let errors: string[] = [];
     let msg: string = "";
