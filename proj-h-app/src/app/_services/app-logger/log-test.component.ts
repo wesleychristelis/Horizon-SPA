@@ -23,8 +23,6 @@ export class LogTestComponent {
     //                 true, false, "Paul", "Smith");
     // let values = ["1", "Paul", "Smith"];
     // this.logger.warn("Test String and Array",
-    //              "Some log entry", values);
-
-    
+    //              "Some log entry", values);  
   }
 }
