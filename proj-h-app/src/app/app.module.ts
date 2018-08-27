@@ -19,6 +19,7 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 import { HttpInterceptorService } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
+import { BannerComponent } from './shared/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { LogPublishersService } from "./_services/app-logger/log-publishers.serv
     ClientSummaryComponent,
     FooterComponent,
     QuickActionsComponent,
-
+    BannerComponent,
     //Testing
     LogTestComponent,
   ],

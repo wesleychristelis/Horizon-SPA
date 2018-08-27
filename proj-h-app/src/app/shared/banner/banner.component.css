@@ -1,0 +1,35 @@
+.app-banner {
+    height: 81px;
+    width: 1920px;
+}
+
+.mask {
+    height: 81px;
+    width: 1920px;
+    background-color: #009DE0;	
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+.app-banner-left {
+    width: 960px;
+    background: #00486D;
+    float: left;
+}
+
+.app-banner-right {
+    width: 960px;
+    background: linear-gradient(270deg, rgba(0,126,166,0) 0%, #00486D 100%);
+    float: right;
+}
+
+.banner-date {
+    height: 81px;
+    width: 321px;
+    color: #FFFFFF;
+    font-family: Flama;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 1.33px;
+    line-height: 29px;
+    text-align: right;
+}
