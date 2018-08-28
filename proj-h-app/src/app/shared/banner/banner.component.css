@@ -1,5 +1,5 @@
 .app-banner {
-    height: 81px;
+    height: 60px;
     width: 1920px;
 }
 
@@ -11,25 +11,29 @@
 }
 
 .app-banner-left {
+    height: inherit;
     width: 960px;
     background: #00486D;
     float: left;
 }
 
 .app-banner-right {
+    height: inherit;
     width: 960px;
     background: linear-gradient(270deg, rgba(0,126,166,0) 0%, #00486D 100%);
     float: right;
+    padding-right:100px;
 }
 
 .banner-date {
-    height: 81px;
+    height: inherit;
     width: 321px;
     color: #FFFFFF;
     font-family: Flama;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: medium;
+    font-weight: medium;
     letter-spacing: 1.33px;
     line-height: 29px;
     text-align: right;
+    float: right;
 }

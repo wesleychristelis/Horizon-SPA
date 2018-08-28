@@ -8,7 +8,6 @@ import { LogService }  from './_services/app-logger/log.service';
 })
 export class AppComponent implements OnInit {
   
-  public today: number = Date.now();
   public title = 'Axon';
 
   constructor(private logService: LogService){}
