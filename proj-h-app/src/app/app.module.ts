@@ -20,7 +20,6 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 import { HttpInterceptorService } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
-import { BannerComponent } from './shared/banner/banner.component';
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
 import { MainMenuComponent } from './core/main-menu/main-menu.component';
 
