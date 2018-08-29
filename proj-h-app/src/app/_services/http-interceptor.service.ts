@@ -7,9 +7,8 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HttpInterceptorService implements HttpInterceptor {
+  
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    // TODO , We can POSSIBLY set JWT Bearer Token Here
 
     return next.handle(req).pipe(
       // Any errors on http calls

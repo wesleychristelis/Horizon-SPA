@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 
 // App Components
 import { AppComponent } from './app.component';
+import { BannerComponent } from './shared/banner/banner.component';
 import { ClientProfileComponent } from './core/client-profile/client-profile.component';
 import { ClientSummaryComponent } from './core/client-summary/client-summary.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -23,15 +24,16 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
 import { MainMenuComponent } from './core/main-menu/main-menu.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
+    BannerComponent,
     HomeComponent,
     ClientProfileComponent,
     ClientSummaryComponent,
     FooterComponent,
     QuickActionsComponent,
-    BannerComponent,
     //Testing
     LogTestComponent,
     ToolbarComponent,

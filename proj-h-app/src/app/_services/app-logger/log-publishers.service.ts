@@ -27,7 +27,7 @@ export class LogPublishersService {
       .catch(this.handleErrors);
   }
 
-  buildPublishers(): void {
+  private buildPublishers(): void {
     let logPub: LogPublisher;
         
     this.getLoggers().subscribe(response => {

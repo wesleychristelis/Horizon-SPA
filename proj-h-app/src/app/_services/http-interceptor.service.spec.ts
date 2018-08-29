@@ -14,3 +14,26 @@ describe('Service: HttpInterceptor', () => {
     expect(service).toBeTruthy();
   }));
 });
+
+// describe(`AuthHttpInterceptor`, () => {
+//   let service: DataService;
+//   let httpMock: HttpTestingController;
+
+//   beforeEach(() => {
+//     TestBed.configureTestingModule({
+//       imports: [HttpClientTestingModule],
+//       providers: [
+//         // Register Data service
+//         DataService,
+//         {
+//           provide: HTTP_INTERCEPTORS,
+//           useClass: AuthHttpInterceptor,
+//           multi: true,
+//         },
+//       ],
+//     });
+
+//     service = TestBed.get(DataService);
+//     httpMock = TestBed.get(HttpTestingController);
+//   });
+// });
