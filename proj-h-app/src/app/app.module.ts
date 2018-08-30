@@ -23,8 +23,10 @@ import { AlertifyService } from './_services/alertify.service';
 import { HttpInterceptorProvider } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
+import { RouterModule } from '@angular/router';
 
-
+// Routes
+import { appRoutes } from './routes';
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { LogPublishersService } from "./_services/app-logger/log-publishers.serv
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [
     AlertifyService,
