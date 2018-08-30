@@ -19,9 +19,11 @@ import { ToolbarComponent } from './core/toolbar/toolbar.component';
 import { LogTestComponent } from './_services/app-logger/log-test.component';
 
 // App Services / Guards / Helpers / Resolvers
+import { AlertifyService } from './_services/alertify.service';
 import { HttpInterceptorProvider } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
+
 
 
 
@@ -44,6 +46,7 @@ import { LogPublishersService } from "./_services/app-logger/log-publishers.serv
     HttpModule
   ],
   providers: [
+    AlertifyService,
     HttpInterceptorProvider,
     LogService,
     LogPublishersService
