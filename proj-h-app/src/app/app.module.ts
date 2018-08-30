@@ -12,7 +12,9 @@ import { ClientProfileComponent } from './core/client-profile/client-profile.com
 import { ClientSummaryComponent } from './core/client-summary/client-summary.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './shared/home/home.component';
+import { MainMenuComponent } from './core/main-menu/main-menu.component';
 import { QuickActionsComponent } from './core/quick-actions/quick-actions.component';
+import { ToolbarComponent } from './core/toolbar/toolbar.component';
 
 import { LogTestComponent } from './_services/app-logger/log-test.component';
 
@@ -20,8 +22,7 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 import { HttpInterceptorProvider } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
-import { ToolbarComponent } from './core/toolbar/toolbar.component';
-import { MainMenuComponent } from './core/main-menu/main-menu.component';
+
 
 
 @NgModule({
@@ -32,11 +33,11 @@ import { MainMenuComponent } from './core/main-menu/main-menu.component';
     ClientProfileComponent,
     ClientSummaryComponent,
     FooterComponent,
-    QuickActionsComponent,
-    //Testing
-    LogTestComponent,
-    ToolbarComponent,
     MainMenuComponent,
+    QuickActionsComponent,
+    ToolbarComponent,
+    //Testing
+    LogTestComponent,   
   ],
   imports: [
     BrowserModule,
