@@ -2,3 +2,25 @@
     float: right;
     color: #ffffff;
   }
+
+  .strack {
+    height: 13px;
+    width: 40px;
+    color: #FFFFFF;
+    font-family: Flama;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .c-net {
+    height: 13px;
+    width: 40px;
+    color: #FFFFFF;
+    font-family: Flama;
+    font-size: 13px;
+    letter-spacing: 0.87px;
+    line-height: 18px;
+    text-align: center;
+  }

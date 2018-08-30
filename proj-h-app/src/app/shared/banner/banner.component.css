@@ -37,3 +37,9 @@
     text-align: right;
     float: right;
 }
+
+.rectangle-2 {
+    height: 81px;
+    width: 1920px;
+    background: linear-gradient(270deg, rgba(0,126,166,0) 0%, #00486D 100%);
+  }

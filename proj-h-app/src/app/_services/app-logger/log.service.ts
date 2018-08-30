@@ -15,6 +15,7 @@ export enum LogLevel {
 
 @Injectable()
 export class LogService {
+  
   level: LogLevel = LogLevel.All;
   logWithDate: boolean = true;
   publishers: LogPublisher[] = [];
