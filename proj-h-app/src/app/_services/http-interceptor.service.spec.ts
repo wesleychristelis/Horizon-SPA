@@ -2,38 +2,25 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { HttpInterceptorService } from './http-interceptor.service';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-describe('Service: HttpInterceptor', () => {
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [HttpInterceptorService]
-    });
+import { LogService } from './app-logger/log.service';
+
+describe('Service: HttpInterceptorService', () => {
+  
+  let httpMock: HttpTestingController;
+
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [HttpClientTestingModule],
+        providers: [
+          // Register Services
+          HttpInterceptorService,
+        ],
+      });
+
   });
 
-  it('should ...', inject([HttpInterceptorService], (service: HttpInterceptorService) => {
-    expect(service).toBeTruthy();
-  }));
 });
 
-// describe(`AuthHttpInterceptor`, () => {
-//   let service: DataService;
-//   let httpMock: HttpTestingController;
-
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       imports: [HttpClientTestingModule],
-//       providers: [
-//         // Register Data service
-//         DataService,
-//         {
-//           provide: HTTP_INTERCEPTORS,
-//           useClass: AuthHttpInterceptor,
-//           multi: true,
-//         },
-//       ],
-//     });
-
-//     service = TestBed.get(DataService);
-//     httpMock = TestBed.get(HttpTestingController);
-//   });
-// });

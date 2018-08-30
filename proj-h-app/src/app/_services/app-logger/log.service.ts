@@ -58,6 +58,7 @@ export class LogService {
   }
 
   private writeToLog(msg: string, level: LogLevel, params: any[]) {
+
     if (this.shouldLog(level)) {
       let entry: LogEntry = new LogEntry();
       entry.message = msg;
@@ -69,7 +70,9 @@ export class LogService {
         logger.log(entry).subscribe(response => console.log(response));
       }
     }
+    
   }
+
 }
 
 export class LogEntry {

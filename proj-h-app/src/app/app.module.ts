@@ -17,7 +17,7 @@ import { QuickActionsComponent } from './core/quick-actions/quick-actions.compon
 import { LogTestComponent } from './_services/app-logger/log-test.component';
 
 // App Services / Guards / Helpers / Resolvers
-import { HttpInterceptorService } from './_services/http-interceptor.service';
+import { HttpInterceptorProvider } from './_services/http-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
@@ -43,7 +43,7 @@ import { MainMenuComponent } from './core/main-menu/main-menu.component';
     HttpModule
   ],
   providers: [
-    HttpInterceptorService,
+    HttpInterceptorProvider,
     LogService,
     LogPublishersService
   ],
