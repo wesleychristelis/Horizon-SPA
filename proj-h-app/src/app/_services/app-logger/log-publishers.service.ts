@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import 'rxjs/add/operator/map';
@@ -13,7 +13,7 @@ const PUBLISHERS_FILE = './assets/log-publishers.json';
 @Injectable()
 export class LogPublishersService {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     // Build publishers arrays
     this.buildPublishers();
   }

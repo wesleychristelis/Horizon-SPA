@@ -12,12 +12,13 @@ export class ErrorInterceptor implements HttpInterceptor {
   constructor(private logger: LogService){}
   
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    
     console.log("Error Interceptor says hello");
     
     return next.handle(req).pipe(
       // Any errors on http calls
       catchError(error => {
-
+        debugger;
         if (error instanceof HttpErrorResponse) {
 
           if (error.status === 401) {
@@ -51,7 +52,7 @@ export class ErrorInterceptor implements HttpInterceptor {
   }
 }
 
-export const HttpInterceptorProvider = {
+export const ErrorInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
   useClass: ErrorInterceptor,
   multi: true

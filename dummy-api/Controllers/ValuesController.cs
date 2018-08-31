@@ -21,14 +21,21 @@ namespace dummy_api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return Ok(id);
+            return NotFound("Not Found");
+        }
+
+        // GET api/values/5
+        [HttpGet("{value}")]
+        public ActionResult<string> Get(string value)
+        {
+            return Unauthorized();
         }
 
         // POST api/values
         [HttpPost]
         public ActionResult<string> Post([FromBody] string value)
         {
-            return Ok("Post Complete");
+            return BadRequest("Invalid or Bad Request");
         }
     }
 }

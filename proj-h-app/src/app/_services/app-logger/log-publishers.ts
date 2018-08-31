@@ -1,4 +1,4 @@
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
@@ -6,6 +6,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 
 import { LogEntry } from './log.service';
+import { HttpClient } from '@angular/common/http';
 
 export abstract class LogPublisher {
   location: string;
@@ -66,7 +67,7 @@ export class LogLocalStorage extends LogPublisher {
 
 export class LogWebApi extends LogPublisher {
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     // Must call super() from derived classes
     super();
     // Set location

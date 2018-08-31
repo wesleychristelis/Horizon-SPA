@@ -20,7 +20,7 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 
 // App Services / Guards / Helpers / Resolvers
 import { AlertifyService } from './_services/alertify.service';
-import { ErrorInterceptor } from './_services/error-interceptor.service';
+import { ErrorInterceptorProvider } from './_services/error-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
@@ -50,7 +50,7 @@ import { appRoutes } from './routes';
   ],
   providers: [
     AlertifyService,
-    ErrorInterceptor,
+    ErrorInterceptorProvider,
     LogService,
     LogPublishersService
   ],
