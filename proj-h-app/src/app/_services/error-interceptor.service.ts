@@ -7,12 +7,13 @@ import { LogService } from './app-logger/log.service';
 @Injectable({
   providedIn: 'root'
 })
-export class HttpInterceptorService implements HttpInterceptor {
+export class ErrorInterceptor implements HttpInterceptor {
 
   constructor(private logger: LogService){}
   
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
+    console.log("Error Interceptor says hello");
+    
     return next.handle(req).pipe(
       // Any errors on http calls
       catchError(error => {
@@ -52,6 +53,6 @@ export class HttpInterceptorService implements HttpInterceptor {
 
 export const HttpInterceptorProvider = {
   provide: HTTP_INTERCEPTORS,
-  useClass: HttpInterceptorService,
+  useClass: ErrorInterceptor,
   multi: true
 };
