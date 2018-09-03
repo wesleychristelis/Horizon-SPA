@@ -80,9 +80,9 @@ export class LogWebApi extends LogPublisher {
      { 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
       
-    return this.http.post(this.location, entry, options)
+    return this.http.post(this.location, entry)
     // TODO : Stringly type the return fom the API, this removes the use of the map
-      .map(response => response.json())
+      .map(response => response)
     // TODO: Errors should get implicity handled in the Interceptor we should be able to remove this and handler error handler
       .catch(this.handleErrors);
   }

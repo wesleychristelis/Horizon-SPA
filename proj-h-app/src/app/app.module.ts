@@ -1,7 +1,7 @@
 //Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler, Injectable} from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 // 3rd Party
 
@@ -20,7 +20,8 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 
 // App Services / Guards / Helpers / Resolvers
 import { AlertifyService } from './_services/alertify.service';
-import { ErrorInterceptorProvider } from './_services/error-interceptor.service';
+import { ErrorInterceptorProvider } from './_services/interceptors/error-interceptor.service';
+import { TimerIntProvidererceptor } from './_services/interceptors/timer-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
@@ -45,14 +46,15 @@ import { appRoutes } from './routes';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [
     AlertifyService,
     ErrorInterceptorProvider,
     LogService,
-    LogPublishersService
+    LogPublishersService,
+    TimerIntProvidererceptor
   ],
   bootstrap: [
     AppComponent

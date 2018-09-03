@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { LogPublisher } from "./log-publishers";
 import { LogPublishersService } from "./log-publishers.service";
 

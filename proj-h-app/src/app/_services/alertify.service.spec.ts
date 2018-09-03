@@ -13,4 +13,5 @@ describe('Service: Alertify.service.ts', () => {
   it('should ...', inject([AlertifyService], (service: AlertifyService) => {
     expect(service).toBeTruthy();
   }));
+  
 });

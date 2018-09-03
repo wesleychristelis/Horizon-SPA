@@ -5,9 +5,9 @@ import { ErrorInterceptor, ErrorInterceptorProvider } from './error-interceptor.
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 
-import { LogService } from './app-logger/log.service';
-import { DummyService } from './dummy.service';
-import { environment } from '../../environments/environment';
+import { LogService } from '../app-logger/log.service';
+import { DummyService } from '../dummy.service';
+import { environment } from '../../../environments/environment';
 
 //https://dev.to/alisaduncan/intercepting-http-requests---using-and-testing-angulars-httpclient
 

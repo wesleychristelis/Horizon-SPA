@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { LogService } from './app-logger/log.service';
+import { LogService } from '../app-logger/log.service';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,6 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       // Any errors on http calls
       catchError(error => {
-        debugger;
         if (error instanceof HttpErrorResponse) {
 
           if (error.status === 401) {

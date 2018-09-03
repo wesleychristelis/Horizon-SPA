@@ -23,7 +23,7 @@ export class LogPublishersService {
   
   getLoggers(): Observable<LogPublisherConfig[]> {
     return this.http.get(PUBLISHERS_FILE)
-      .map(response => response.json())
+      .map(response => response)
       .catch(this.handleErrors);
   }
 
