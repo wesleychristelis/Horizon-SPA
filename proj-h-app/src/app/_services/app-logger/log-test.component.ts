@@ -10,7 +10,7 @@ export class LogTestComponent {
   }
       
   testLog(): void {
-    this.logger.debug("Test the log() Method", [1]);
+    //this.logger.debug("Test the log() Method", [1]);
     // this.logger.info("Test the log() Method", [1]);
     // this.logger.warn("Test the log() Method");
     // this.logger.error("Test the log() Method");

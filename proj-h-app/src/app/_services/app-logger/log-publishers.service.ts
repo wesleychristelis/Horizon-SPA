@@ -33,15 +33,18 @@ export class LogPublishersService {
     this.getLoggers().subscribe(response => {
       for (let pub of response.filter(p => p.isActive)) {
         switch (pub.loggerName.toLowerCase()) {
-          case "console":
+          case "console":{
             logPub = new LogConsole();
             break;
-          case "localstorage":
+          }
+          case "localstorage":{
             logPub = new LogLocalStorage();
             break;
-          case "webapi":
+          }
+          case "webapi":{
             logPub = new LogWebApi(this.http);
             break;
+          }
         }
         // Set location of logging
         logPub.location = pub.loggerLocation;

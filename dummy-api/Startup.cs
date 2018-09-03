@@ -55,9 +55,6 @@ namespace dummy_api
                         if (error != null) 
                         {
                             context.Response.AddApplicationError(error.Error.Message);
-
-                            Console.WriteLine("WESLEY WAS HERE" + error.Error.Message);
-
                             await context.Response.WriteAsync(error.Error.Message);
                         }
                     });
