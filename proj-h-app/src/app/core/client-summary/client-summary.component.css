@@ -1,0 +1,30 @@
+.client-summary-container {	
+    margin: 10px 0px 0px 10px;
+    height: 342px;	
+    width: 500px;	
+    border-radius: 2px;	
+    background-color: #FFFFFF;	
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+}
+
+.client-summary-picture {	
+    height: 190px;	
+    width: 170px;	
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+}
+
+.client-summary-details {
+    height: 32px;
+    width: 206px;
+    color: #4B585C;
+    font-family: Flama;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1.47px;
+    line-height: 32px;
+}
+
+.client-summary-status {
+    height: 32px;
+    width: 206px;
+}

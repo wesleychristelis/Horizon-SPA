@@ -9,7 +9,6 @@ export class ClientProfileComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
