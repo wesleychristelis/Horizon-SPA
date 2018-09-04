@@ -12,7 +12,9 @@ export enum LogLevel {
   Off = 6
 }
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class LogService {
   
   level: LogLevel = LogLevel.All;
@@ -32,27 +34,27 @@ export class LogService {
     return ret;
   }
 
-  debug(msg: string, optionalParams: any[]) {
+  debug(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.Debug, optionalParams);
   }
           
-  info(msg: string, optionalParams: any[]) {
+  info(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.Info, optionalParams);
   }
           
-  warn(msg: string, optionalParams: any[]) {
+  warn(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.Warn, optionalParams);
   }
           
-  error(msg: string, optionalParams: any[]) {
+  error(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.Error, optionalParams);
   }
           
-  fatal(msg: string, optionalParams: any[]) {
+  fatal(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.Fatal, optionalParams);
   }
           
-  log(msg: string, optionalParams: any[]) {
+  log(msg: string, optionalParams?: any[]) {
     this.writeToLog(msg, LogLevel.All, optionalParams);
   }
 
@@ -64,14 +66,15 @@ export class LogService {
       entry.level = level;
       entry.extraInfo = params;
       entry.logWithDate = this.logWithDate;
-      
+
       for (let logger of this.publishers) {
-        logger.log(entry).subscribe(response => console.log(response));
+        logger.log(entry).subscribe((response: boolean) => {
+          console.log(response)
+        });
       }
     }
     
   }
-
 }
 
 export class LogEntry {
@@ -90,7 +93,7 @@ export class LogEntry {
     }
     ret += "Type: " + LogLevel[this.level];
     ret += " - Message: " + this.message;
-    if (this.extraInfo.length) {
+    if (this.extraInfo) {
       ret += " - Extra Info: " + this.formatParams(this.extraInfo);
     }
       

@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { LogService } from './log.service';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
       
 @Component({
   selector: "log-test",
@@ -7,21 +8,17 @@ import { LogService } from './log.service';
 })
 export class LogTestComponent implements OnInit {
   
-  ngOnInit(): void {
-    
-  }
-
+  ngOnInit(): void {}
   
   constructor(private logger: LogService) {}
       
   testLog(): void {
+    this.logger.info("####### Test the log() Method #######", [1]);
     //this.logger.debug("Test the log() Method", [1]);
-    // this.logger.info("Test the log() Method", [1]);
     // this.logger.warn("Test the log() Method");
     // this.logger.error("Test the log() Method");
     // this.logger.fatal("Test the log() Method");
     // this.logger.log("Test the log() Method");
-
     // this.logger.log("Test 2 Parameters",
     //             "Paul", "Smith");
     // this.logger.debug("Test Mixed Parameters",

@@ -20,13 +20,14 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 
 // App Services / Guards / Helpers / Resolvers
 import { AlertifyService } from './_services/alertify.service';
+import { ClientProfileService } from './_services/client/client-profile/client-profile.service';
+import { ClientSummaryService } from './_services/client/client-summary/client-summary.service';
 import { ErrorInterceptorProvider } from './_services/interceptors/error-interceptor.service';
 import { TimerIntProvidererceptor } from './_services/interceptors/timer-interceptor.service';
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
-import { ClientProfileService } from './_services/client/client-profile/client-profile.service';
-import { ClientSummaryService } from './_services/client/client-summary/client-summary.service';
+
 
 // Routes
 import { appRoutes } from './routes';
@@ -53,12 +54,12 @@ import { appRoutes } from './routes';
   ],
   providers: [
     AlertifyService,
+    ClientProfileService,
+    ClientSummaryService,
     ErrorInterceptorProvider,
     LogService,
     LogPublishersService,
-    TimerIntProvidererceptor,
-    ClientProfileService,
-    ClientSummaryService
+    TimerIntProvidererceptor
   ],
   bootstrap: [
     AppComponent

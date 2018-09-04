@@ -9,7 +9,7 @@ import { LogService } from '../app-logger/log.service';
 })
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor(private logger: LogService){}
+  constructor(){}
   
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
       

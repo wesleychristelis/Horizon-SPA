@@ -11,7 +11,7 @@
     },
     {
       "loggerName": "webapi",
-      "loggerLocation": "http://localhost:5000/api/values/logtest",
+      "loggerLocation": "http://localhost:5000/api/values/logtestcontract",
       "isActive": true
     }
   ]

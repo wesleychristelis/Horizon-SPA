@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using dummy_api.models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace dummy_api.Controllers
@@ -14,7 +15,7 @@ namespace dummy_api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return Ok(new string[] { "value1", "value2" });
+            return Ok(new string[] { "wesley", "brenden (all 6 inches)" });
         }
 
         // GET api/values/5
@@ -38,12 +39,12 @@ namespace dummy_api.Controllers
             return BadRequest("Invalid or Bad Request");
         }
 
-                // POST api/values
-        [HttpPost("logtest")]
-        public ActionResult<string> LogTest([FromBody] string value)
+        [HttpPost("logtestcontract")]
+        public ActionResult<string> LogTest([FromBody] LogEntryDto value)
         {
-            Console.WriteLine("**** hit the api ****" + value);
-            return Ok("API hit:::" + value);
+            Console.WriteLine("**** hit the api ****" + value.Message);
+            return Ok("API hit:::" + value.Message);
+
             //return BadRequest("Invalid or Bad Request");
         }
     }

@@ -17,7 +17,7 @@ export class LogConsole extends LogPublisher {
     console.log(entry.buildLogString());
     return of(true);
   }
-  
+
   clear(): Observable<boolean> {
     console.clear();
     return of(true);
@@ -67,19 +67,13 @@ export class LogWebApi extends LogPublisher {
   constructor(private http: HttpClient) {
     // Must call super() from derived classes
     super();
-    // Set location
-    this.location = "http://localhost:5000/api/values/logtest";
   }
       
   // Add log entry to back end data store
   public log(entry: LogEntry): Observable<boolean> {
-    let headers = new Headers(
-     { 'Content-Type': 'application/json' });
-    let options = new RequestOptions({ headers: headers });
-      
     return this.http.post<boolean>(this.location, entry);
   }
-      
+
   // Clear all log entries from local storage
   public clear(): Observable<boolean> {
     // TODO: Call Web API to clear all values
