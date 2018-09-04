@@ -25,6 +25,8 @@ import { TimerIntProvidererceptor } from './_services/interceptors/timer-interce
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
+import { ClientProfileService } from './_services/client/client-profile/client-profile.service';
+import { ClientSummaryService } from './_services/client/client-summary/client-summary.service';
 
 // Routes
 import { appRoutes } from './routes';
@@ -54,7 +56,9 @@ import { appRoutes } from './routes';
     ErrorInterceptorProvider,
     LogService,
     LogPublishersService,
-    TimerIntProvidererceptor
+    TimerIntProvidererceptor,
+    ClientProfileService,
+    ClientSummaryService
   ],
   bootstrap: [
     AppComponent

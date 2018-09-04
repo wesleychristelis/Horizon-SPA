@@ -1,0 +1,12 @@
+import { Injectable } from '@angular/core';
+import { CLIENT } from '../../../core/client-summary/client-summary.mock-data';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ClientSummaryService {
+
+  constructor() { }
+  
+  getClient() { return CLIENT; }
+}
