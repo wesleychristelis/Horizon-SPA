@@ -37,5 +37,14 @@ namespace dummy_api.Controllers
         {
             return BadRequest("Invalid or Bad Request");
         }
+
+                // POST api/values
+        [HttpPost("logtest")]
+        public ActionResult<string> LogTest([FromBody] string value)
+        {
+            Console.WriteLine("**** hit the api ****" + value);
+            return Ok("API hit:::" + value);
+            //return BadRequest("Invalid or Bad Request");
+        }
     }
 }

@@ -1,12 +1,9 @@
 import { Response, Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import { HttpClient } from '@angular/common/http';
+
+import { Observable, of } from 'rxjs';
 
 import { LogEntry } from './log.service';
-import { HttpClient } from '@angular/common/http';
 
 export abstract class LogPublisher {
   location: string;
@@ -18,12 +15,12 @@ export class LogConsole extends LogPublisher {
   log(entry: LogEntry): Observable<boolean> {
     // Log to console
     console.log(entry.buildLogString());
-    return Observable.of(true);
+    return of(true);
   }
   
   clear(): Observable<boolean> {
     console.clear();
-    return Observable.of(true);
+    return of(true);
   }
 }
 
@@ -55,13 +52,13 @@ export class LogLocalStorage extends LogPublisher {
       console.log(ex);
     }
       
-    return Observable.of(ret);
+    return of(ret);
   }
       
   // Clear all log entries from local storage
   clear(): Observable<boolean> {
     localStorage.removeItem(this.location);
-    return Observable.of(true);
+    return of(true);
   }
 }
 
@@ -71,41 +68,22 @@ export class LogWebApi extends LogPublisher {
     // Must call super() from derived classes
     super();
     // Set location
-    this.location = "http://localhost:3000/logtest";
+    this.location = "http://localhost:5000/api/values/logtest";
   }
       
   // Add log entry to back end data store
-  log(entry: LogEntry): Observable<boolean> {
+  public log(entry: LogEntry): Observable<boolean> {
     let headers = new Headers(
      { 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
       
-    return this.http.post(this.location, entry)
-    // TODO : Stringly type the return fom the API, this removes the use of the map
-      .map(response => response)
-    // TODO: Errors should get implicity handled in the Interceptor we should be able to remove this and handler error handler
-      .catch(this.handleErrors);
+    return this.http.post<boolean>(this.location, entry);
   }
       
   // Clear all log entries from local storage
-  clear(): Observable<boolean> {
+  public clear(): Observable<boolean> {
     // TODO: Call Web API to clear all values
-    return Observable.of(true);
-  }
-  
-  private handleErrors(error: any): Observable<any> {
-    let errors: string[] = [];
-    let msg: string = "";
-    msg = "Status: " + error.status;
-    msg += " - Status Text: " + error.statusText;
-    if (error.json()) {
-      msg += " - Exception Message: " + error.json().exceptionMessage;
-    }
-    errors.push(msg);
-      
-    console.error('An error occurred', errors);
-      
-    return Observable.throw(errors);
+    return of(true);
   }
 }
 

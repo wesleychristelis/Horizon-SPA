@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
 
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/observable/throw';
+import { Observable } from 'rxjs';
 
 import { LogPublisher, LogConsole, LogLocalStorage, LogWebApi, LogPublisherConfig  } from './log-publishers';
 
@@ -22,15 +19,13 @@ export class LogPublishersService {
   publishers: LogPublisher[] = [];
   
   getLoggers(): Observable<LogPublisherConfig[]> {
-    return this.http.get(PUBLISHERS_FILE)
-      .map(response => response)
-      .catch(this.handleErrors);
+    return this.http.get<LogPublisherConfig[]>(PUBLISHERS_FILE);
   }
 
   private buildPublishers(): void {
     let logPub: LogPublisher;
         
-    this.getLoggers().subscribe(response => {
+    this.getLoggers().subscribe((response: LogPublisherConfig[]) => {
       for (let pub of response.filter(p => p.isActive)) {
         switch (pub.loggerName.toLowerCase()) {
           case "console":{
@@ -42,32 +37,22 @@ export class LogPublishersService {
             break;
           }
           case "webapi":{
+            console.log("LogWebApi HIT");
             logPub = new LogWebApi(this.http);
             break;
           }
         }
         // Set location of logging
         logPub.location = pub.loggerLocation;
+        console.log(logPub.location + " NEW URL")
         // Add publisher to array
         this.publishers.push(logPub);
       }
+    },
+    error => {
+      alert("Error in LogPublishersService => getLoggers:::" + error)
+      console.log("Error in LogPublishersService => getLoggers:::" + error)
     });
-  }
-
-  private handleErrors(error: any): Observable<any> {
-    let errors: string[] = [];
-    let msg: string = "";
-        
-    msg = "Status: " + error.status;
-    msg += " - Status Text: " + error.statusText;
-    if (error.json()) {
-      msg += " - Exception Message: " + error.json().exceptionMessage;
-    }
-    errors.push(msg);
-        
-    console.error('An error occurred', errors);
-        
-    return Observable.throw(errors);
   }
 }
  

@@ -10,10 +10,10 @@ export class AppComponent implements OnInit {
   
   public title = 'Axon';
 
-  constructor(private logService: LogService){}
+  constructor(){}
 
   ngOnInit(): void {
-    this.logService.debug("Test the log() Method", [1]);
+    
   }
  
 }

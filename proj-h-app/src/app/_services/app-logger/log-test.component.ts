@@ -1,13 +1,18 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { LogService } from './log.service';
       
 @Component({
   selector: "log-test",
   templateUrl: "./log-test.component.html"
 })
-export class LogTestComponent {
-  constructor(private logger: LogService) {
+export class LogTestComponent implements OnInit {
+  
+  ngOnInit(): void {
+    
   }
+
+  
+  constructor(private logger: LogService) {}
       
   testLog(): void {
     //this.logger.debug("Test the log() Method", [1]);
