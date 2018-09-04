@@ -1,11 +1,15 @@
 
 <div class="client-summary-container">
-  <div class="summary-img"></div>
-  <div class="summary-details">
-      Mr. Voyu Makatini
+  <div class="client-summary-img"></div>
+  <div class="client-summary-details">
+      <h1>Name</h1>
+      Lives in: <b>{{ clientSummary.location }}</b><br />
+      Work: <b>{{ clientSummary.occupation }}</b><br />
+      Birthday: <b>{{ clientSummary.birthDate | date: 'dd MMMM yyyy' }}</b><br />
+      Bank Better Score: <b>{{ clientSummary.score }}</b><br />
   </div>
-  <div class="summary-status">
-      Mr. Voyu Makatini
+  <div class="client-summary-status">
+        {{ clientSummary.score }}
   </div>
   <app-quick-actions></app-quick-actions>
 </div>
