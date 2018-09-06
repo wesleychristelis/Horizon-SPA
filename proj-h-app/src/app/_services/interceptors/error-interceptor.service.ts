@@ -18,12 +18,22 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError(error => {
         if (error instanceof HttpErrorResponse) {
 
-          if (error.status === 401) {
-            return throwError(error.statusText);
+          let errorMsg = { StatusText: error.statusText, Message: error.error };
+
+          debugger;
+
+          //We might want to destinguish between client and server type error codes, 
+          //thus the use of 2 conditional statments
+          
+          //client errors
+          if (error.status === 400 || error.status === 401 || error.status === 403 || error.status === 404 || 
+            error.status === 405 || error.status === 408) {
+
+            return throwError(errorMsg);
           }
-
+          
           const applicationError = error.headers.get('Application-Error');
-
+          
           if (applicationError) {
             return throwError(applicationError);
           }

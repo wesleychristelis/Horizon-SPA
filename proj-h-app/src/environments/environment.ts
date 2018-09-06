@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:5000/api/',
+  apiUrl: 'http://localhost:52015/api/',
   publishers: [
     {
       "loggerName": "console",
@@ -18,7 +18,7 @@ export const environment = {
     },
     {
       "loggerName": "webapi",
-      "loggerLocation": "http://localhost:5000/api/values/logtestcontract",
+      "loggerLocation": "http://localhost:52015/api/values/logtestcontract",
       "isActive": true
     }
   ]

@@ -1,6 +1,6 @@
 //Angular
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 // 3rd Party
@@ -27,6 +27,7 @@ import { TimerIntProvidererceptor } from './_services/interceptors/timer-interce
 import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
+import { GlobalErrorHandlerService } from './_services/error-handler/global-error-handler.service';
 
 
 // Routes
@@ -59,7 +60,11 @@ import { appRoutes } from './routes';
     ErrorInterceptorProvider,
     LogService,
     LogPublishersService,
-    TimerIntProvidererceptor
+    TimerIntProvidererceptor, 
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandlerService
+    }
   ],
   bootstrap: [
     AppComponent

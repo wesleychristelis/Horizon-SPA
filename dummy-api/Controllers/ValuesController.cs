@@ -22,7 +22,7 @@ namespace dummy_api.Controllers
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return NotFound("Not Found");
+            return NotFound("Not Found Error Hit. Custom message.");
         }
 
         // GET api/values/5
@@ -31,21 +31,19 @@ namespace dummy_api.Controllers
         {
             return Unauthorized();
         }
-
-        // POST api/values
-        [HttpPost]
-        public ActionResult<string> Post([FromBody] string value)
+        
+        // POST api/values/ErrorTest
+        [HttpPost("ErrorTest")]
+        public ActionResult<string> Post()
         {
-            return BadRequest("Invalid or Bad Request");
+            return BadRequest("Invalid or Bad Request error action hit...! Custom message. ");
         }
-
+        
         [HttpPost("logtestcontract")]
         public ActionResult<string> LogTest([FromBody] LogEntryDto value)
         {
             Console.WriteLine("**** hit the api ****" + value.Message);
-            return Ok("API hit:::" + value.Message);
-
-            //return BadRequest("Invalid or Bad Request");
+            return Ok(true);
         }
     }
 }
