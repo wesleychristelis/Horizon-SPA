@@ -1,5 +1,6 @@
 .client-summary-container {	
     margin: 10px 0px 0px 10px;
+    padding: 10px;
     height: 342px;	
     width: 500px;	
     border-radius: 2px;	
@@ -7,16 +8,28 @@
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
 }
 
-.client-summary-picture {	
+.client-summary-img {
     height: 190px;	
     width: 170px;	
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
+    position: relative;
+    float: left;
 }
 
 .client-summary-details {
-    height: 32px;
-    width: 206px;
-    color: #4B585C;
+    margin-left:10px;
+    width: 300px;
+	color: #4B585C;
+	font-family: Flama;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	line-height: 22px;
+    position: relative;
+    float: right;
+}
+
+.client-summary-details h1{
     font-family: Flama;
     font-size: 22px;
     font-weight: 600;
@@ -25,6 +38,9 @@
 }
 
 .client-summary-status {
+    margin-left:10px;
     height: 32px;
-    width: 206px;
+    width: 300px;
+    position: relative;
+    float: right;
 }
