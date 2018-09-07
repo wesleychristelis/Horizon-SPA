@@ -1,12 +1,12 @@
 
-<div class="client-summary-container">
+<section class="client-summary-container">
   <div class="client-summary-img">
     <img src="{{clientSummary.photo.url}}" alt="clientSummary.photo.description">
   </div>
 
   <div class="client-summary-details">
       <h1>{{clientSummary.name}}</h1>
-      <div class="mt-2">
+      <div class="mt-1">
           Lives in: <b>{{ clientSummary.location }}</b>
       </div>
       <div class="mt-2">
@@ -18,9 +18,9 @@
       <div class="mt-2">
           Bank Better Score: <b>{{ clientSummary.score | clientScore }}</b>
       </div>
-  </div>
-  <div class="client-summary-status mt-3">
-        <app-client-score></app-client-score>
+      <div class="client-summary-status mt-4">
+          <app-client-score></app-client-score>
+    </div>
   </div>
   <app-quick-actions></app-quick-actions>
-</div>
+</section>

@@ -14,7 +14,7 @@ export class ClientScoreComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.score = 4;
+    this.score = 1;
   }
 
   // TODO: Investigate cleaner approach
