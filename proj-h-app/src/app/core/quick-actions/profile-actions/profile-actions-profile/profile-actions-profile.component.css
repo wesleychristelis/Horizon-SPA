@@ -1,0 +1,8 @@
+.rectangle-4 {
+	height: 80px;
+	width: 101px;
+	border: 1px solid #009DE0;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}

@@ -16,7 +16,8 @@ import { ClientSummaryComponent } from './core/client-summary/client-summary.com
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './shared/home/home.component';
 import { MainMenuComponent } from './core/main-menu/main-menu.component';
-import { QuickActionsComponent } from './core/quick-actions/quick-actions.component';
+import { ProfileActionsProfileComponent } from './core/client-summary/quick-actions/profile-actions/profile-actions-profile/profile-actions-profile.component';
+import { QuickActionsComponent } from './core/client-summary/quick-actions/quick-actions.component';
 import { ToolbarComponent } from './core/toolbar/toolbar.component';
 
 import { LogTestComponent } from './_services/app-logger/log-test.component';
@@ -47,6 +48,7 @@ import { appRoutes } from './routes';
     ClientSummaryComponent,
     FooterComponent,
     MainMenuComponent,
+    ProfileActionsProfileComponent,
     QuickActionsComponent,
     ToolbarComponent,
     //Testing

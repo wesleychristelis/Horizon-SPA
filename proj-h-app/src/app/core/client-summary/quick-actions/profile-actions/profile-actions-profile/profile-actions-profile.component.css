@@ -1,0 +1,31 @@
+/* Inactive */
+.base-size{
+	height: 80px;
+	width: 80px;
+}
+
+.action-button {
+	border: 1px solid #009DE0;
+	color: #009DE0;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+	cursor: pointer;	
+}
+
+.action-button span {
+	height: 14px;
+	width: 101px;
+	color: #526065;
+	font-size: 12px;
+	letter-spacing: 0.5px;
+	line-height: 14px;
+	text-align: center;
+}
+
+div:hover button, div:hover span{
+	background-color: #009DE0;
+	color: #FFFFFF;
+}
+
+
