@@ -6,7 +6,7 @@ export const CLIENT: ClientSummary = {
     location: "Stellenbosch",
     occupation: "Mercenary",
     birthDate: new Date('1984-09-27:00:00:00Z'),
-    score: 2,
+    score: 4,
     photo: {
         id:1,
         url: "../../assets/images.png",

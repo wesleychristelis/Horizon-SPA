@@ -2,8 +2,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // 3rd Party
+import { RatingModule } from 'ngx-bootstrap';
 
 // App Components
 import { AppComponent } from './app.component';
@@ -22,6 +24,7 @@ import { LogTestComponent } from './_services/app-logger/log-test.component';
 // App Services / Guards / Helpers / Resolvers
 import { AlertifyService } from './_services/alertify.service';
 import { ClientProfileService } from './_services/client/client-profile/client-profile.service';
+import { ClientScorePipe } from './core/client-summary/client-score/client-score/client-score-pipe/client-score-pipe';
 import { ClientSummaryService } from './_services/client/client-summary/client-summary.service';
 import { ErrorInterceptorProvider } from './_services/interceptors/error-interceptor.service';
 import { TimerIntProvidererceptor } from './_services/interceptors/timer-interceptor.service';
@@ -29,7 +32,6 @@ import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
 import { GlobalErrorHandlerService } from './_services/error-handler/global-error-handler.service';
-
 
 // Routes
 import { appRoutes } from './routes';
@@ -41,6 +43,7 @@ import { appRoutes } from './routes';
     HomeComponent,
     ClientProfileComponent,
     ClientScoreComponent,
+    ClientScorePipe,
     ClientSummaryComponent,
     FooterComponent,
     MainMenuComponent,
@@ -51,7 +54,9 @@ import { appRoutes } from './routes';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
+    RatingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [

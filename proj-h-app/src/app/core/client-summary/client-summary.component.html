@@ -3,14 +3,23 @@
   <div class="client-summary-img">
     <img src="{{clientSummary.photo.url}}" alt="clientSummary.photo.description">
   </div>
+
   <div class="client-summary-details">
       <h1>{{clientSummary.name}}</h1>
-      Lives in: <b>{{ clientSummary.location }}</b><br />
-      Work: <b>{{ clientSummary.occupation }}</b><br />
-      Birthday: <b>{{ clientSummary.birthDate | date: 'dd MMMM yyyy' }}</b><br />
-      Bank Better Score: <b>{{ clientSummary.score }}</b><br />
+      <div class="mt-2">
+          Lives in: <b>{{ clientSummary.location }}</b>
+      </div>
+      <div class="mt-2">
+          Work: <b>{{ clientSummary.occupation }}</b>
+      </div>
+      <div class="mt-2">
+          Birthday: <b>{{ clientSummary.birthDate | date: 'dd MMMM yyyy' }}</b>
+      </div>
+      <div class="mt-2">
+          Bank Better Score: <b>{{ clientSummary.score | clientScore }}</b>
+      </div>
   </div>
-  <div class="client-summary-status">
+  <div class="client-summary-status mt-3">
         <app-client-score></app-client-score>
   </div>
   <app-quick-actions></app-quick-actions>

@@ -9,4 +9,9 @@
    cursor: pointer; 
 }
 
+body {
+    background-color: #ECECEC;
+    font-family: Flama;
+}
+
 /* Main text styles */

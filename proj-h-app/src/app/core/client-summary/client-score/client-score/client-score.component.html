@@ -1,3 +1,7 @@
-<p>
-  client-score works!
-</p>
+<div>
+  <rating [max]="5" [(ngModel)]="score" [customTemplate]="rating"></rating>
+  <ng-template #rating let-i="index">
+    <div class="score-widget score-widget-{{populateRating(i)}} float">
+    </div>
+  </ng-template>
+</div>
