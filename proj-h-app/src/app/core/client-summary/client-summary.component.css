@@ -44,3 +44,8 @@
     position: relative;
     float: right;
 }
+
+img {
+    height: 190px;	
+    width: 170px;	
+}

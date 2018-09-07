@@ -1,0 +1,25 @@
+.score-widget-end {
+	height: 10px;
+	width: 49px;
+	border-radius: 0 100px 100px 0;
+	background-color: #D8D8D8;
+}
+
+.score-widget-begin {
+	height: 10px;
+	width: 49px;
+	border-radius: 100px 0 0 100px;
+	background-color: #EF9E15;
+}
+
+.score-widget-full {
+	height: 10px;
+	width: 49px;
+	background: linear-gradient(270deg, #F4B140 0%, #EF9E15 100%);
+}
+
+.score-widget-empty {
+	height: 10px;
+	width: 49px;
+	background-color: #D8D8D8;
+}

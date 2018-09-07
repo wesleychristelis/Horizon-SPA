@@ -16,7 +16,7 @@ export class GlobalErrorHandlerService implements ErrorHandler {
       error.Message = "Oops. An error has occured.";
 
     this.logger.error(error.StatusText + " : " + error.Message);
-    
+  
     let formattedErrMsg = '<b>' + error.StatusText + '</b>' + '<br>' + error.Message;
     this.alertify.error(formattedErrMsg);
   }

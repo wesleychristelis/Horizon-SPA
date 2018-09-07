@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './shared/banner/banner.component';
 import { ClientProfileComponent } from './core/client-profile/client-profile.component';
+import { ClientScoreComponent } from './core/client-summary/client-score/client-score/client-score.component';
 import { ClientSummaryComponent } from './core/client-summary/client-summary.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './shared/home/home.component';
@@ -33,13 +34,13 @@ import { GlobalErrorHandlerService } from './_services/error-handler/global-erro
 // Routes
 import { appRoutes } from './routes';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     HomeComponent,
     ClientProfileComponent,
+    ClientScoreComponent,
     ClientSummaryComponent,
     FooterComponent,
     MainMenuComponent,

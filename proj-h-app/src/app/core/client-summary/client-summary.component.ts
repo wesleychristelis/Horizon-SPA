@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientSummaryService } from '../../_services/client/client-summary/client-summary.service';
-import { ClientSummary } from './client-summary';
+import { ClientSummary } from '../../_models/client-summary';
 
 @Component({
   selector: 'app-client-summary',
@@ -20,7 +20,6 @@ export class ClientSummaryComponent implements OnInit {
 
   getClientSummary(): void {
     this.clientSummary = this.clientSummaryService.getClient();
-    this.birthdate = new Date(this.clientSummary.birthDate);
   }
 
 }

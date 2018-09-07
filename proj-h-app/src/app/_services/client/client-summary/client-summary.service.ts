@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CLIENT } from '../../../core/client-summary/client-summary.mock-data';
+import { CLIENT } from '../../../_mock/client-summary.mock-data';
 
 @Injectable({
   providedIn: 'root'
