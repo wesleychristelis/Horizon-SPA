@@ -1,3 +1,7 @@
+.action-section{
+	float: left;
+}
+
 /* Inactive */
 .base-size{
 	height: 80px;
