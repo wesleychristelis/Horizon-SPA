@@ -2,6 +2,7 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
 @import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
 @import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 
@@ -11,7 +12,17 @@
 
 body {
     background-color: #ECECEC;
-    font-family: Flama;
+    font-family: Flama-Light;
 }
 
-/* Main text styles */
+/* Imported fonts */
+@font-face {
+    font-family: 'Flama-Basic';
+    src: url('assets/fonts/Flama-Basic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Flama-Light';
+    src: url('assets/fonts/Flama-Light.otf') format('opentype');
+}
+
