@@ -1,5 +1,19 @@
 <section class="col-md-1">
-    <i class="fas fa-bars menu-button pointer"></i>
+    <i class="fas fa-bars menu-button pointer" [matMenuTriggerFor]="menu"></i>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <i class="fas fa-cocktail"></i>
+          <span> Option 1</span>
+        </button>
+        <button mat-menu-item>
+            <i class="fas fa-coffee"></i>
+            <span> Option 2</span>
+        </button>
+        <button mat-menu-item>
+            <i class="fas fa-beer"></i>
+            <span> Option 3</span>
+        </button>
+      </mat-menu>
 </section>
 
 

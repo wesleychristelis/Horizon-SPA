@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 // 3rd Party
 import { RatingModule } from 'ngx-bootstrap';
@@ -33,6 +34,7 @@ import { LogService } from './_services/app-logger/log.service';
 import { LogPublishersService } from "./_services/app-logger/log-publishers.service";
 import { RouterModule } from '@angular/router';
 import { GlobalErrorHandlerService } from './_services/error-handler/global-error-handler.service';
+import { MaterialModule } from './material';
 
 // Routes
 import { appRoutes } from './routes';
@@ -60,6 +62,8 @@ import { appRoutes } from './routes';
     HttpClientModule,
     RatingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     AlertifyService,
