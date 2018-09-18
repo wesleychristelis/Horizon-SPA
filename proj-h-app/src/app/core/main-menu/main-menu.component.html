@@ -1,19 +1,37 @@
 <section class="col-md-1">
-    <i class="fas fa-bars menu-button pointer" [matMenuTriggerFor]="menu"></i>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <i class="fas fa-cocktail"></i>
-          <span> Option 1</span>
-        </button>
-        <button mat-menu-item>
-            <i class="fas fa-coffee"></i>
-            <span> Option 2</span>
-        </button>
-        <button mat-menu-item>
-            <i class="fas fa-beer"></i>
-            <span> Option 3</span>
-        </button>
-      </mat-menu>
-</section>
+    <i class="fas fa-bars menu-button pointer" [matMenuTriggerFor]="mainMenu"></i>
+    <mat-menu #mainMenu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="cocktails">
+        <i class="fas fa-cocktail"></i>
+        <span> Cocktails</span>
+      </button>
+      <button mat-menu-item>
+          <i class="fas fa-coffee"></i>
+          <span> Coffee</span>
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="beers">
+          <i class="fas fa-beer"></i>
+          <span> Beers</span>
+      </button>
+    </mat-menu>
+
+    <mat-menu #cocktails="matMenu">
+      <button mat-menu-item>Cocktail 1</button>
+      <button mat-menu-item>Cocktail 2</button>
+    </mat-menu>
+
+    <mat-menu #beers="matMenu">
+      <button mat-menu-item>Beer 1</button>
+      <button mat-menu-item>Beer 2</button>
+    </mat-menu>
+</section> 
+<!-- 
+    <i class="fas fa-bars menu-button pointer" [matMenuTriggerFor]="mainMenu1"></i>
+        <mat-menu #mainMenu1="matMenu">
+          <ng-container *ngFor="let el of [1,2,3,4,5]">
+            <button mat-menu-item (click)="clickHandler('Item 1 of Menu ' + el)">Menu {{el}}:Item 1</button>
+          </ng-container>
+        </mat-menu>
+        -->
 
 
