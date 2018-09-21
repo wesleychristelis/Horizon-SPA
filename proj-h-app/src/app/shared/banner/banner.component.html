@@ -1,14 +1,28 @@
 <section class="app-banner">
   <div class="app-banner-left">
-    <div class="banner-date"></div>
+      
+    <div class="banner-logo">
+        <img src="/assets/imgs/bgs/Global One Logo.svg">
+    </div>
+    
+
+
+      
   </div>
   <div class="app-banner-right">
-    
-    <!-- <div class="banner-calendar">
-        <i class="fas fa-calendar fa-lg"></i>
-      </div> -->
+
+    <div class="calendar-img">
+      <img src="/assets/imgs/bgs/debit order white 40px.png">
+    </div>  
+      
     <div class="banner-date">
-      <p>{{today | date:'dd MMMM yyyy - hh:mm'}}</p>
+      {{today | date:'dd MMMM yyyy - hh:mm'}}
     </div>
+
+    <div class="casper-input">
+        <input type="text" placeholder="Hello, how can I help you?">
+    </div>
+    
+
   </div>
 </section>

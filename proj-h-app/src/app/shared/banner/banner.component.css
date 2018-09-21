@@ -1,5 +1,5 @@
 .app-banner {
-    height: 60px;
+    height: 76px;
     width: 1920px;
 }
 
@@ -8,6 +8,11 @@
     width: 960px;
     background: #00486D;
     float: left;
+    padding-left:20px;
+}
+
+.banner-logo {
+    padding-top: 2%;
 }
 
 .app-banner-right {
@@ -17,7 +22,7 @@
     height: 100%;
     background-position: center;
     background-repeat: repeat;
-    padding: 12px 100px 0px 450px;
+    padding: 13px 30px 22px 250px;
 }
 
 .banner-calendar{
@@ -32,9 +37,34 @@
     color: #FFFFFF;
     font-family: Flama-Light;
 	font-size: 20px;
-	font-weight: 500;
-    letter-spacing: 1.33px;
-    line-height: 29px;
+	font-weight: 600;
+    letter-spacing: 1.5px;
+    line-height: 47px;
     text-align: right;
-    float: right;
+    float: left;
+}
+
+.casper-input input {
+    background-image: url('/assets/imgs/bgs/Casper Blue.svg');
+    background-repeat: no-repeat;
+    background-position-x: 5%;
+    background-position-y: center;
+
+    border-radius: 2px;
+    border: 1px;
+    height: 48px;	
+    width: 320px;
+    color: #4B585C;	
+    font-size: 15px;
+    font-weight:bold;
+    letter-spacing: 1.5px;
+    line-height: 17px;
+    float:right;
+    padding-left: 10%;
+}
+
+.calendar-img {
+    float:left;
+    margin-right:25px;
+    padding-top: 1%;
 }

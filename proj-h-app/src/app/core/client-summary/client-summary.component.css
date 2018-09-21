@@ -1,10 +1,10 @@
 .client-summary-container {	
-    margin: 10px 0px 0px 10px;
-    padding: 10px;
-    height: 342px;	
-    width: 500px;	
-    border-radius: 2px;	
-    background-color: #FFFFFF;	
+    margin: 20px 0px 0px 20px;
+    padding: 20px;
+    height: 350px;
+    width: 474px;
+    border-radius: 2px;
+    background-color: #FFFFFF;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
 }
 
@@ -14,11 +14,12 @@
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.2);
     position: relative;
     float: left;
+    border-radius: 4px;
 }
 
 .client-summary-details {
     margin-left:10px;
-    width: 300px;
+    width: 250px;
 	color: #4B585C;
 	font-family: Flama-Light;
 	font-size: 15px;
@@ -38,11 +39,10 @@
 }
 
 .client-summary-status {
-    margin-left:10px;
     height: 32px;
-    width: 300px;
+    width: 255px;
     position: relative;
-    float: right;
+    float: left;
 }
 
 img {

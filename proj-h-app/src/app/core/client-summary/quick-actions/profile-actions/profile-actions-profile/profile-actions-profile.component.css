@@ -1,11 +1,12 @@
 .action-section{
 	float: left;
+	margin-right:10px;
 }
 
 /* Inactive */
 .base-size{
 	height: 80px;
-	width: 80px;
+	width: 101px;
 }
 
 .action-button {
